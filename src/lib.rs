@@ -1,20 +1,17 @@
 // Provide functionality to create client node.
-trait Client{
-  type IpAddr: std::net::SocketAddr;  
+trait ClientBuilder {
+    type IpAddr: std::net::SocketAddr;
 
-  pub fn connect(){}
+    fn connect() {}
 
-  pub fn close(){}
+    fn close() {}
 
-  pub fn listen(){}
-
-
+    fn listen() {}
 }
 
-
 // Provide functionality to create server node.
-trait Server{
-   type IpAddr: std::net::SocketAddr;  
-    
-   pub fn connect();
+trait ServerBuilder {
+    type IpAddr: std::net::SocketAddr;
+
+    fn connect();
 }
